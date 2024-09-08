@@ -4,7 +4,7 @@
     left: 0;
     z-index: 1750;
     min-width: 1240px;
-    background-color: black;
+    background-color: #252525;
 }
 
 .navbarContainer {
@@ -67,6 +67,10 @@
     gap: 20px;
 }
 
+.searchList {
+    color: #252525;
+}
+
 .searchButton {
     border: 0;
     cursor: pointer;
@@ -74,7 +78,7 @@
 }
 
 .s_hidden {
-    verflow: hidden; 
+    overflow: hidden; 
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute;
     width: 1px;
