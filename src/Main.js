@@ -1,55 +1,41 @@
 import style from "./main.module.css";
+import ImageSlider from "./ImageSlider";
+import axios from "axios";
+import {useState, useEffect} from "react";
+
+const API_KEY = '2d1d80f7773d77eddbf5e11603922d4a';
+const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
 
 function Main(){
+    const[movies, setMovies] = useState([]);
+    const[error, setError] = useState(null);
+    const images =[
+      'https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg',
+      'https://image.tmdb.org/t/p/w500/865DntZzOdX6rLMd405R0nFkLmL.jpg',
+      'https://image.tmdb.org/t/p/w500/stKGOm8UyhuLPR9sZLjs5AkmncA.jpg',
+      'https://image.tmdb.org/t/p/w500/kKgQzkUCnQmeTPkyIwHly2t6ZFI.jpg',
+      'https://image.tmdb.org/t/p/w500/PywbVPeIhBFc33QXktnhMaysmL.jpg'
+    ];
+    
+    useEffect(() => {
+      const fetchMovies = async () => {
+        try{
+          const response = await axios.get(API_URL);
+          setMovies(response.data.results);
+        }catch(err){
+          setError(err);
+        }
+      };
+      fetchMovies();
+    }, []);
+
+    if(error) return <p>Error:{error.message}</p>
+
     return (
         <main className={style.main}>
           <div>
             <div>
-              <section className={style.mainSection}>
-                <div className={style.multiBanner}>
-                  <h2 className={style.ir}>빅배너</h2>
-                  <div className={style.swiperPaginationFraction}>
-                    <span className={style.swiperPaginationCurrent}>1</span>
-                    |
-                    <span className={style.swiperPaginationTotal}>5</span>
-                  </div>
-                  <button type="button" tabindex="0" aria-label="Next slide" className={style.swiperButtonPrev}>이전배너</button>
-                  <button type="button" tabindex="0" aria-label="Previous slide" className={style.swiperButtonNext}>다음배너</button>
-                  <div className={style.swiperWrapper}>
-                    <div className={style.swiperSlide}>
-                      <div>
-                        <picture></picture>
-                        <picture></picture>
-                      </div>
-                    </div>
-                    <div className={style.swiperSlide}>
-                      <div>
-                        <picture></picture>
-                        <picture></picture>
-                      </div>
-                    </div>
-                    <div className={style.swiperSlide}>
-                      <div>
-                        <picture></picture>
-                        <picture></picture>
-                      </div>
-                    </div>
-                    <div className={style.swiperSlide}>
-                      <div>
-                        <picture></picture>
-                        <picture></picture>
-                      </div>
-                    </div>
-                    <div className={style.swiperSlide}>
-                      <div>
-                        <picture></picture>
-                        <picture></picture>
-                      </div>
-                    </div>
-                  </div>
-                  <span></span>
-                </div>
-              </section>
+                <ImageSlider images={images} interval={4000} />            
             </div>
           </div>
         </main>
