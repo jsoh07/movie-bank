@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import style from "./main.module.css";
+import {Link} from "react-router-dom";
 
 function ImageSlider({images, interval = 4000}) {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,30 +34,13 @@ function ImageSlider({images, interval = 4000}) {
                   <div className={style.swiperWrapper}>
                     <div className={style.swiperSlide}>
                       <div className={style.sliderImage}>
-                        <img src={images[currentIndex]}/>
-                      </div>
-                    </div>
-                    <div className={style.swiperSlide}>
-                      <div className={style.sliderImage}>
-                        <img src={images[currentIndex]}/>
-                      </div>
-                    </div>
-                    <div className={style.swiperSlide}>
-                      <div className={style.sliderImage}>
-                        <img src={images[currentIndex]}/>
-                      </div>
-                    </div>
-                    <div className={style.swiperSlide}>
-                      <div className={style.sliderImage}>
-                        <img src={images[currentIndex]}/>
-                      </div>
-                    </div>
-                    <div className={style.swiperSlide}>
-                      <div className={style.sliderImage}>
-                        <img src={images[currentIndex]}/>
+                        <Link>  
+                          <img src={images[currentIndex]}/>
+                        </Link>
                       </div>
                     </div>
                   </div>
+                  
                   <span></span>
                 </div>
         </section>

@@ -30,12 +30,37 @@ function Main(){
     }, []);
 
     if(error) return <p>Error:{error.message}</p>
-
+    
     return (
         <main className={style.main}>
           <div>
             <div>
-                <ImageSlider images={images} interval={4000} />            
+                <ImageSlider images={images} interval={4000} />
+                <section>
+                  <div>
+                    <div className={style.title}>
+                      <h1><span>무비뱅크 추천작</span></h1>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <ul>
+                        {movies.filter(movie => movie.vote_average >= 7)
+                        .slice(0,5).map(m =>
+                        <div>
+                            <li key={m.id}>
+                              <h2>{m.title}</h2>
+                              <h4>{m.genre_ids}</h4>
+                              <div className={style.thumbImage}>
+                                <img src={'https://image.tmdb.org/t/p/w500${m.poster_path}'}/>
+                              </div>
+                            </li>
+                        </div>  
+                        )}
+                      </ul>
+                    </div>
+                  </div>
+                </section>            
             </div>
           </div>
         </main>
