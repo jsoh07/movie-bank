@@ -9,13 +9,7 @@ const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&l
 function Main(){
     const[movies, setMovies] = useState([]);
     const[error, setError] = useState(null);
-    const images =[
-      'https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg',
-      'https://image.tmdb.org/t/p/w500/865DntZzOdX6rLMd405R0nFkLmL.jpg',
-      'https://image.tmdb.org/t/p/w500/stKGOm8UyhuLPR9sZLjs5AkmncA.jpg',
-      'https://image.tmdb.org/t/p/w500/kKgQzkUCnQmeTPkyIwHly2t6ZFI.jpg',
-      'https://image.tmdb.org/t/p/w500/PywbVPeIhBFc33QXktnhMaysmL.jpg'
-    ];
+    
     
     useEffect(() => {
       const fetchMovies = async () => {
@@ -33,32 +27,26 @@ function Main(){
     
     return (
         <main className={style.main}>
-          <div>
-            <div>
-                <ImageSlider images={images} interval={4000} />
-                <section>
-                  <div>
+          <div className={style.sliderAndListContainer}>
+            <div className={style.imageSlider}>
+                <ImageSlider />
+                <section className={style.listBox}>
+                  <div className={style.list}>
                     <div className={style.title}>
-                      <h1><span>무비뱅크 추천작</span></h1>
+                      <h1><span className={style.label}>무비뱅크 추천작</span></h1>
                     </div>
                   </div>
                   <div>
-                    <div>
-                      <ul>
-                        {movies.filter(movie => movie.vote_average >= 7)
-                        .slice(0,5).map(m =>
-                        <div>
-                            <li key={m.id}>
-                              <h2>{m.title}</h2>
-                              <h4>{m.genre_ids}</h4>
+                    <ul className={style.movieList}>
+                      {movies.filter(m => m.vote_average >= 7.5).slice(0, 5).map(m =>
+                        <li key={m.id} className={style.movieItem}>
+                         <h2>{m.title}</h2>
                               <div className={style.thumbImage}>
-                                <img src={'https://image.tmdb.org/t/p/w500${m.poster_path}'}/>
+                                <img src={`https://image.tmdb.org/t/p/w200${m.poster_path}`} alt={m.title} />
                               </div>
-                            </li>
-                        </div>  
-                        )}
-                      </ul>
-                    </div>
+                        </li>
+                      )}
+                    </ul>
                   </div>
                 </section>            
             </div>
