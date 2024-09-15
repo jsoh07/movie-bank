@@ -1,19 +1,16 @@
-import style from "./common.module.css";
-import Navbar from "./Navbar";
-import Main from "./Main";
-import Footer from "./Footer";
-
-function App() {
-  return (
-    <div>
-      <div className={style.body}>
-        <Navbar />
-        <Main />
-        <Footer />
-      </div>
-    </div>
-  );
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home.js";
+import MovieInfo from "./MovieInfo.js";
+function App(){
+    return(
+        <div>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/movie/:id" element={<MovieInfo />} />
+            </Routes>
+        </div>
+        
+    );
 }
 
 export default App;
-
