@@ -34,11 +34,11 @@ function ImageSlider({ images, interval = 4000 }) {
                 <button onClick={goToPrevSlide} type="button"  className={style.swiperButtonPrev}>이전배너</button>
                 <button onClick={goToNextSlide} type="button"  className={style.swiperButtonNext}>다음배너</button>
                 <div className={style.swiperWrapper} ref={sliderRef}>
-                    {images.map((image, index) => (
+                    {images.map((item, index) => (
                         <div key={index} className={style.swiperSlide}>
                             <div className={style.sliderImage}>
-                                <Link to={'/movie/${movies.id}'}>
-                                    <img src={image} alt={`Slide ${index}`} />
+                                <Link to={`/movie/${item.id}`}>
+                                    <img src={item.url} alt={`Slide ${index}`} />
                                 </Link>
                             </div>
                         </div>
