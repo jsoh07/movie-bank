@@ -1,6 +1,7 @@
 import { useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "./Navbar";
-
+import style from "./search.module.css";
+import {Link} from "react-router-dom";
 
 
 function Search() {
@@ -12,18 +13,20 @@ function Search() {
     return (
         <>
         <Navbar />
-        <div>
+        <div className={style.searchBox}>
             <h1>검색 결과: "{query}"</h1>
-            <div>
+            <div className={style.searchContainer}>
                 {movies.length ? (
-                    movies.map(movie => (
-                        <div key={movie.id}>
-                            <h2>{movie.title}</h2>
+                    movies.map((movie, index) => (
+                        <div key={movie.id} className={style.searchList}>
+                            <Link to={`/movie/${movie.id}`}>
                             <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
+                            </Link>
+                            
                         </div>
                     ))
                 ) : (
-                    <p>검색 결과가 없습니다.</p>
+                    <h1>검색 결과가 없습니다.</h1>
                 )}
             </div>
         </div>

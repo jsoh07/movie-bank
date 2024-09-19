@@ -1,0 +1,26 @@
+.searchBox{
+    padding: 20px;  
+    min-height: 540px;
+    background-color: #252525;
+}
+.searchBox h1{
+    color: white;
+}
+.searchContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.searchList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchList img {
+    border-radius: 12px;
+    width: 200px;
+    height: auto;
+}

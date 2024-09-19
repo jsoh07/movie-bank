@@ -20,12 +20,20 @@ function Navbar(){
       return [];
     }
   };
-  
+
   const handleSearch = async (event) => {
     event.preventDefault();
     const movies = await fetchMovies(searchTerm);
     navigate(`/search?query=${encodeURIComponent(searchTerm)}`, { state: {movies} });
   };
+
+  const categories = [
+    { id: 28, name: '액션' },
+    { id: 16, name: '애니' },
+    { id: 878, name: 'SF' },
+    { id: 53, name: '스릴러' },
+    { id: 80, name: '범죄' }
+  ];
 
     return(
         <header className={style.headerContainer}>
@@ -36,21 +44,23 @@ function Navbar(){
               </Link>  
               <div className={style.categoryList}>
                 <ul className={style.menuList}>
-                  <li className={style.menuTitle}>
-                    <Link href="/" className={style.titleLink} style={{textDecoration: "none"}}>액션</Link>
+                {categories.map((category) => (
+                  <Link to={`/category`} className={style.titleLink} style={{textDecoration: "none"}}>
+                    <li key={category.id} className={style.menuTitle}>{category.name}</li>
+                  </Link>
+                ))}
+                  {/* <li className={style.menuTitle}>
+                    <Link to="/" className={style.titleLink} style={{textDecoration: "none"}}>애니</Link>
                   </li>
                   <li className={style.menuTitle}>
-                    <Link href="/" className={style.titleLink} style={{textDecoration: "none"}}>애니</Link>
+                    <Link to="/" className={style.titleLink} style={{textDecoration: "none"}}>SF</Link>
                   </li>
                   <li className={style.menuTitle}>
-                    <Link href="/" className={style.titleLink} style={{textDecoration: "none"}}>SF</Link>
+                    <Link to="/" className={style.titleLink} style={{textDecoration: "none"}}>스릴러</Link>
                   </li>
                   <li className={style.menuTitle}>
-                    <Link href="/" className={style.titleLink} style={{textDecoration: "none"}}>스릴러</Link>
-                  </li>
-                  <li className={style.menuTitle}>
-                    <Link href="/" className={style.titleLink} style={{textDecoration: "none"}}>범죄</Link>
-                  </li>
+                    <Link to="/" className={style.titleLink} style={{textDecoration: "none"}}>범죄</Link>
+                  </li> */}
                 </ul>
               </div>
               <ul className={style.search}>
