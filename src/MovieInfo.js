@@ -1,7 +1,7 @@
-import TmdbApi from "./TmdbApi";
+import TmdbApi from "./component/TmdbApi";
 import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./component/Navbar";
 
 function MovieInfo(){
     const {id} = useParams();
@@ -23,7 +23,7 @@ function MovieInfo(){
     return (
         <>
         <Navbar />
-        <div style={{padding: '20px', backgroundColor: 'rgb(33, 30, 30)' }}>
+        <div style={{padding: '20px', backgroundColor: 'rgb(33, 30, 30)', overflowX: 'hidden' }}>
             <h1 style={{color: 'white'}}>{movie.title}</h1>
             <div style={{display: 'flex'}}>
                 <img

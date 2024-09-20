@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import style from "./navbar.module.css";
 import TmdbApi from "./TmdbApi";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 function Navbar(){
@@ -45,22 +45,10 @@ function Navbar(){
               <div className={style.categoryList}>
                 <ul className={style.menuList}>
                 {categories.map((category) => (
-                  <Link to={`/category`} className={style.titleLink} style={{textDecoration: "none"}}>
-                    <li key={category.id} className={style.menuTitle}>{category.name}</li>
+                  <Link to={`/category/${category.id}`} key={category.id} className={style.titleLink} style={{textDecoration: "none"}}>
+                    <li className={style.menuTitle}>{category.name}</li>
                   </Link>
                 ))}
-                  {/* <li className={style.menuTitle}>
-                    <Link to="/" className={style.titleLink} style={{textDecoration: "none"}}>애니</Link>
-                  </li>
-                  <li className={style.menuTitle}>
-                    <Link to="/" className={style.titleLink} style={{textDecoration: "none"}}>SF</Link>
-                  </li>
-                  <li className={style.menuTitle}>
-                    <Link to="/" className={style.titleLink} style={{textDecoration: "none"}}>스릴러</Link>
-                  </li>
-                  <li className={style.menuTitle}>
-                    <Link to="/" className={style.titleLink} style={{textDecoration: "none"}}>범죄</Link>
-                  </li> */}
                 </ul>
               </div>
               <ul className={style.search}>

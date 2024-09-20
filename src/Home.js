@@ -1,7 +1,6 @@
-import style from "./common.module.css";
-import Navbar from "./Navbar";
+import style from "./component/home.module.css";
+import Navbar from "./component/Navbar";
 import Main from "./Main";
-import Footer from "./Footer";
 
 function Home() {
   return (
@@ -9,7 +8,6 @@ function Home() {
       <div className={style.body}>
         <Navbar />
         <Main />
-        <Footer />
       </div>
     </div>
   );
