@@ -8,7 +8,7 @@ function App(){
     return(
         <div>
             <Routes>
-                <Route path="/movie-bank" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/movie/:id" element={<MovieInfo />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/category/:id" element={<Category />} />

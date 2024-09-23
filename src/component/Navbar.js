@@ -39,8 +39,8 @@ function Navbar(){
         <header className={style.headerContainer}>
           <nav className={style.navbarContainer}>
             <div className={style.navbarContent}>
-              <Link to="/movie-bank" className={style.logo}>
-              <img src="/movieBankLogo.png" className={style.logo} alt="movie bank" />
+              <Link to="/" className={style.logo}>
+              <img src={`${process.env.PUBLIC_URL}/movieBankLogo.png`} className={style.logo} alt="movie bank" />
               </Link>  
               <div className={style.categoryList}>
                 <ul className={style.menuList}>
