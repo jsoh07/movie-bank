@@ -1,5 +1,5 @@
 import style from "./main.module.css";
-import ImageSlider from "./ImageSlider";
+import ImageSlider from "./component/ImageSlider";
 import {useState, useEffect} from "react";
 import TmdbApi from "./component/TmdbApi";
 import {Link} from "react-router-dom";
