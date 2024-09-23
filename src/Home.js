@@ -1,4 +1,4 @@
-import style from "./component/home.module.css";
+import style from "./home.module.css";
 import Navbar from "./component/Navbar";
 import Main from "./Main";
 

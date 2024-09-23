@@ -1,7 +1,7 @@
-import TmdbApi from "./component/TmdbApi";
+import TmdbApi from "./TmdbApi";
 import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "./component/Navbar";
+import Navbar from "./Navbar";
 
 function MovieInfo(){
     const {id} = useParams();

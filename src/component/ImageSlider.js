@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import style from "./main.module.css";
+import style from "../main.module.css";
 import { Link } from "react-router-dom";
 
 function ImageSlider({ images, interval = 3000 }) {

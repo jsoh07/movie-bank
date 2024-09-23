@@ -1,7 +1,7 @@
-import TmdbApi from "./component/TmdbApi";
+import TmdbApi from "./TmdbApi";
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import Navbar from "./component/Navbar";
+import Navbar from "./Navbar";
 import style from "./search.module.css";
 import {Link} from "react-router-dom";
 

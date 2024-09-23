@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home.js";
-import MovieInfo from "./MovieInfo.js";
-import Search from "./Search.js";
-import Category from "./Category.js";
+import MovieInfo from "./component/MovieInfo.js";
+import Search from "./component/Search.js";
+import Category from "./component/Category.js";
 
 function App(){
     return(

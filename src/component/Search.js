@@ -1,5 +1,5 @@
 import { useLocation, useSearchParams } from "react-router-dom";
-import Navbar from "./component/Navbar";
+import Navbar from "./Navbar";
 import style from "./search.module.css";
 import {Link} from "react-router-dom";
 
