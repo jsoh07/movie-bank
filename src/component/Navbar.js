@@ -40,8 +40,8 @@ function Navbar(){
           <nav className={style.navbarContainer}>
             <div className={style.navbarContent}>
               <Link to="/" className={style.logo}>
-              <img src="/movieBankLogo.png" className={style.logo} alt="movie bank" />
-              </Link>  
+                <img src={`${process.env.PUBLIC_URL}/movieBankLogo.png`} className={style.logo} alt="movie bank" />
+              </Link>
               <div className={style.categoryList}>
                 <ul className={style.menuList}>
                 {categories.map((category) => (
