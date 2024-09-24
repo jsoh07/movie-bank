@@ -35,6 +35,7 @@ function Main(){
       const fetchUpcomingMovies = async () => {
         try{
           const data = await TmdbApi.fetchMovies('/movie/upcoming');
+          console.log('Upcoming Movies Data:', data); // 응답 데이터 확인
           setUpcomingMovies(data.results);
           setMinReleaseDate(data.dates.minimum);
           setMaxReleaseDate(data.dates.maximum);
@@ -56,7 +57,7 @@ function Main(){
         <main className={style.main}>
           <div className={style.sliderAndListContainer}>
             <div className={style.imageSlider}>
-            <ImageSlider images={images} interval={4000} />
+            <ImageSlider images={images} interval={3000} />
                 <section className={style.listBox}>
                   <div className={style.list}>
                     <div className={style.title}>
@@ -106,15 +107,24 @@ function Main(){
                   </div>
                   <div>
                     <ul className={style.movieList}>
-                      {upcomingMovies.filter(m => new Date(m.release_date) >= new Date(minReleaseDate) &&
-                        new Date(m.release_date) <= new Date(maxReleaseDate) ).slice(0, 5).map(m =>
-                        <li key={m.id} className={style.movieItem}>
-                              <div className={style.thumbImage}>
-                                <Link to={`/movie/${m.id}`}>
+                      {upcomingMovies.filter(m => 
+                        new Date(m.release_date) >= new Date(minReleaseDate) &&
+                        new Date(m.release_date) <= new Date(maxReleaseDate)
+                      ).length === 0 ? (
+                        <h2>Coming soon...</h2>
+                      ) : (
+                        upcomingMovies.filter(m => 
+                          new Date(m.release_date) >= new Date(minReleaseDate) &&
+                          new Date(m.release_date) <= new Date(maxReleaseDate)
+                        ).slice(0, 5).map(m => (
+                          <li key={m.id} className={style.movieItem}>
+                            <div className={style.thumbImage}>
+                              <Link to={`/movie/${m.id}`}>
                                 <img src={`https://image.tmdb.org/t/p/w200${m.poster_path}`} alt={m.title} />
-                                </Link>
-                              </div>
-                        </li>
+                              </Link>
+                            </div>
+                          </li>
+                        ))
                       )}
                     </ul>
                   </div>
@@ -123,6 +133,6 @@ function Main(){
           </div>
         </main>
     )
-}
+};
 
 export default Main;

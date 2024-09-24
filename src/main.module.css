@@ -64,11 +64,12 @@
     display: flex; 
     width: 100%; 
     height: 508px; 
-    transition: transform 0.5s ease-in-out; 
+    transition: transform 0.5s ease; 
 }
 
 .swiperSlide {
     flex: 0 0 100%;
+    min-width: 100%;
     height: 100%; 
     display: flex;
     justify-content: center;
@@ -102,6 +103,9 @@
     position: relative;
     top: 0px;
     left: 110px;
+}
+.movieList h2 {
+    color: rgb(190, 125, 39);
 }
 
 .movieItem {
