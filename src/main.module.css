@@ -90,8 +90,8 @@
     /* object-fit: cover; */
 }
 .sectionContainer {
-    position: relative;
-    left: 200px;
+    justify-content: center;
+    align-items: center;
 }
 @media (max-width: 768px) {
     .sectionContainer {
