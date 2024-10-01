@@ -56,8 +56,10 @@ function Main(){
     return (
         <main className={style.main}>
           <div className={style.sliderAndListContainer}>
-            <div className={style.imageSlider}>
-            <ImageSlider images={images} interval={3000} />
+              <div className={style.imageSlider}>
+                <ImageSlider images={images} interval={3000} />
+              </div>
+              <div className={style.sectionContainer}>
                 <section className={style.listBox}>
                   <div className={style.list}>
                     <div className={style.title}>
@@ -129,7 +131,7 @@ function Main(){
                     </ul>
                   </div>
                 </section>
-            </div>
+              </div>
           </div>
         </main>
     )
