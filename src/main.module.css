@@ -89,18 +89,10 @@
     height: 100%;
     /* object-fit: cover; */
 }
-
 .sectionContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 섹션을 가운데 정렬 */
-  }
-  
-  .listBox {
-    width: 100%; /* 필요한 경우 너비 조정 */
-    max-width: 1200px; /* 로고와 맞출 최대 너비 설정 */
-  }
-  
+    position: relative;
+    left: 80px;
+}
 .title {
     position: relative;
     left: 150px;
