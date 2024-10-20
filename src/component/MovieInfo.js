@@ -23,7 +23,7 @@ function MovieInfo(){
     return (
         <>
         <Navbar />
-        <div style={{padding: '20px', backgroundColor: 'rgb(33, 30, 30)', overflowX: 'hidden' }}>
+        <div style={{padding: '20px', backgroundColor: 'rgb(33, 30, 30)', height: '100vh', overflowX: 'hidden' }}>
             <h1 style={{color: 'white'}}>{movie.title}</h1>
             <div style={{display: 'flex'}}>
                 <img
