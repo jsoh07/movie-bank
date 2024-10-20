@@ -1,13 +1,14 @@
-.searchBox{
+.searchBox {
     padding: 20px;  
     min-height: 540px;
     background-color: #252525;
-    overflow-x: hidden;
+    overflow-y: auto; 
+    height: auto; 
 }
 .searchBox h1{
     color: white;
 }
-.searchContainer{
+.searchContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
