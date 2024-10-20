@@ -1,9 +1,7 @@
 .searchBox {
     padding: 20px;  
-    /* min-height: 540px; */
     background-color: #252525;
-    /* height: calc(230vh - 60px);  */
-    height: auto;
+    height: calc(210vh - 60px); 
 }
 .searchBox h1{
     color: white;
