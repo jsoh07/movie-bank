@@ -1,8 +1,9 @@
 .searchBox {
     padding: 20px;  
-    min-height: 540px;
+    /* min-height: 540px; */
     background-color: #252525;
-    height: calc(230vh - 60px); /* Navbar 높이를 고려 */
+    /* height: calc(230vh - 60px);  */
+    height: auto;
 }
 .searchBox h1{
     color: white;
